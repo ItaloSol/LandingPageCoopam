@@ -85,7 +85,7 @@ const config: Config = {
   },
   plugins: [
     require('tailwindcss-animate'),
-    function({ addBase, addComponents, addUtilities }) {
+    function({ addBase, addComponents, addUtilities }: { addBase: (styles: Record<string, any>) => void, addComponents: (styles: Record<string, any>) => void, addUtilities: (styles: Record<string, any>) => void }) {
       addUtilities({
         '.will-change-transform': {
           'will-change': 'transform',
