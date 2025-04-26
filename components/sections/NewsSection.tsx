@@ -4,85 +4,63 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-
+import Image from "next/image";
 const categories = ["Operações", "Sustentabilidade", "Novidades", "Tecnologia"];
 
-const allNews = [
+const recentNews = [
   {
     id: 1,
-    title: "Nova frota de caminhões elétricos",
-    summary: "Investimento em sustentabilidade com aquisição de veículos elétricos para entregas urbanas.",
-    image: "/about.webp",
+    title: "Dia C 2024: evento realizado em São Gabriel da Palha reforça poder do cooperativismo",
+    summary: "Com a proposta de estreitar ainda mais os laços com a comunidade, as cooperativas Cooabriel, Coopcam,  Coopesg e Sicoob realizaram em São Gabriel da Palha, um grande evento em comemoração ao Dia de Cooperar 2024.",
+    image: "/1.webp",
     date: "2024-02-15",
     category: "Sustentabilidade"
   },
   {
     id: 2,
-    title: "Expansão das operações no Nordeste",
-    summary: "Coopcam inaugura novo centro de distribuição em Recife para melhor atender a região.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80",
+    title: "Coopcam realiza a AGO 2024 com muito sucesso",
+    summary: "A Coopcam realizou no dia 23 de março de 2024 a sua Assembleia Geral Ordinária presencial.",
+    image: "/diac.webp",
     date: "2024-02-10",
     category: "Operações"
   },
   {
     id: 3,
-    title: "Certificação ISO 9001 renovada",
-    summary: "Mais um ano de reconhecimento pela excelência em nossos processos de qualidade.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80",
-    date: "2024-02-05",
+    title: "DIA C 2023: Cooperativas de São Gabriel da Palha se unem para celebrar o Dia do Cooperativismo",
+    summary: "Intercooperação e muita alegria foram presenças marcantes na celebração do Dia C 2023, em São Gabriel da Palha. O dia festivo aconteceu no último dia 2 e foi realizado pelas cooperativas Cooabriel, Coopcam, Coopesg e Sicoob Conexão, com o apoio da cooperativa mirim Coop-União.  As ações foram patrocinadas pelo Sistema OCB-ES/ SESCOOP/ES.",
+    image: "/diac2.webp",
+    date: "2024-07-15",
     category: "Novidades"
-  },
-  {
-    id: 4,
-    title: "Implementação de novo sistema de rastreamento",
-    summary: "Tecnologia de ponta para monitoramento em tempo real de toda a frota.",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80",
-    date: "2024-02-01",
-    category: "Tecnologia"
-  },
-  {
-    id: 5,
-    title: "Programa de capacitação de motoristas",
-    summary: "Investimento em treinamento e desenvolvimento profissional da equipe.",
-    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80",
-    date: "2024-01-28",
-    category: "Operações"
-  },
-  {
-    id: 6,
-    title: "Parceria com projeto de reflorestamento",
-    summary: "Compromisso com a compensação de carbono através do plantio de árvores.",
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80",
-    date: "2024-01-25",
-    category: "Sustentabilidade"
   }
 ];
 
-export default function NoticiasPage() {
+export default function NewsSection() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const filteredNews = selectedCategory
-    ? allNews.filter(news => news.category === selectedCategory)
-    : allNews;
+    ? recentNews.filter(news => news.category === selectedCategory)
+    : recentNews;
 
   return (
-    <main className="min-h-screen bg-gray-50 py-12">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="mb-4">
-              <ChevronLeft className="mr-2 h-4 w-4" />
-              Voltar para Home
+        <div className="flex justify-between items-center mb-12">
+          <h2 className="text-3xl font-bold text-[#9D9D9D]">
+            Últimas Notícias
+          </h2>
+          <Link href="/noticias">
+            <Button variant="outline" className="text-[#257367]">
+              Ver Todas
+              <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
-          <h1 className="text-4xl font-bold text-[#9D9D9D]">Notícias</h1>
         </div>
 
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-lg shadow-sm sticky top-4">
+            <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="font-semibold mb-4">Categorias</h3>
               <div className="space-y-2">
                 <Button
@@ -112,12 +90,15 @@ export default function NoticiasPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredNews.map((news) => (
                 <Link href={`/noticias/${news.id}`} key={news.id}>
-                  <Card className="overflow-hidden bg-white h-full hover:shadow-md transition-shadow">
+                  <Card className="overflow-hidden h-full hover:shadow-md transition-shadow">
                     <div className="aspect-video relative">
-                      <img
+                      <Image
                         src={news.image}
                         alt={news.title}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority={news.id === 1}
                       />
                     </div>
                     <CardContent className="pt-6">
@@ -144,6 +125,6 @@ export default function NoticiasPage() {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

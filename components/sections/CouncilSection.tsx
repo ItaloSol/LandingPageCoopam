@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
+import Image from "next/image";
 const administrationCouncil = [
   {
     name: "Advaldo A. Zotelle",
@@ -144,10 +144,13 @@ export default function CouncilSection() {
                     <CardContent className="pt-6 flex flex-col flex-grow">
                       <div className="mb-4 flex-shrink-0">
                         <div className="w-24 h-24 rounded-full mx-auto overflow-hidden">
-                          <img
+                          <Image
                             src={member.image}
                             alt={member.name}
+                            width={96}
+                            height={96}
                             className="w-full h-full object-cover"
+                            priority
                           />
                         </div>
                       </div>
@@ -192,10 +195,13 @@ export default function CouncilSection() {
                     <CardContent className="pt-6 flex flex-col flex-grow">
                       <div className="mb-4 flex-shrink-0">
                         <div className="w-24 h-24 rounded-full mx-auto overflow-hidden">
-                          <img
+                          <Image
                             src={member.image}
                             alt={member.name}
+                            width={96}
+                            height={96}
                             className="w-full h-full object-cover"
+                            priority
                           />
                         </div>
                       </div>

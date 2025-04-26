@@ -7,21 +7,12 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
   theme: {
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
-    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -70,32 +61,30 @@ const config: Config = {
           '5': 'hsl(var(--chart-5))',
         },
       },
-      transitionProperty: {
-        'height': 'height',
-        'spacing': 'margin, padding',
+      keyframes: {
+        'accordion-down': {
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
+        },
       },
-      transitionDuration: {
-        '250': '250ms',
-      },
-      transitionTimingFunction: {
-        'bounce-start': 'cubic-bezier(0.8, 0, 1, 1)',
-        'bounce-end': 'cubic-bezier(0, 0, 0.2, 1)',
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },
-  plugins: [
-    require('tailwindcss-animate'),
-    function({ addBase, addComponents, addUtilities }: { addBase: (styles: Record<string, any>) => void, addComponents: (styles: Record<string, any>) => void, addUtilities: (styles: Record<string, any>) => void }) {
-      addUtilities({
-        '.will-change-transform': {
-          'will-change': 'transform',
-        },
-        '.backface-hidden': {
-          'backface-visibility': 'hidden',
-        },
-      });
-    },
-  ],
+  plugins: [require('tailwindcss-animate')],
 };
-
 export default config;
