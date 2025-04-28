@@ -3,8 +3,6 @@
 import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Building2, Target, Compass, Heart } from "lucide-react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
 const facilities = [
@@ -33,99 +31,55 @@ const facilities = [
 const identityCards = [
   {
     icon: <Building2 className="h-8 w-8" />,
-    title: "Missão",
+    title: "MISSÃO",
     content: "Oferecer ao cooperado serviços do ramo de transporte de cargas, buscando a excelência e a satisfação dos nossos clientes e cooperados, com segurança e qualidade por meio do cooperativismo."
   },
   {
     icon: <Target className="h-8 w-8" />,
-    title: "Visão",
+    title: "VISÃO",
     content: "Ser reconhecida como uma das melhores empresas de transportes de carga na percepção dos nossos clientes, colaboradores, sociedade e principalmente dos nossos cooperados, tendo como pilares a melhoria contínua e o crescimento constante."
   },
   {
     icon: <Heart className="h-8 w-8" />,
-    title: "Valores",
+    title: "VALORES",
     content: "Cooperação, Transparência, Ética, Profissionalismo, Parceria de respeito com clientes e colaboradores, Comprometimento e Organização."
   }
 ];
 
 export default function CorporateSection() {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    threshold: 0.2,
-    triggerOnce: true
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  const containerVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-        delay: 0.2
-      }
-    }
-  };
-
-  const timelineVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        delay: i * 0.2,
-        type: "spring",
-        stiffness: 100
-      }
-    })
-  };
-
   return (
-    <section className="py-20 bg-white" ref={ref}>
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div 
-          className="text-center mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-        >
-          <h2 className="text-3xl font-bold text-[#9D9D9D] mb-4">
-            Quem Somos?
+        <div className="text-center mb-16 opacity-0 animate-fade-in">
+          <h2 className="text-3xl font-bold text-[#fa8028] mb-4">
+            QUEM SOMOS?
           </h2>
           <div className="max-w-3xl mx-auto">
             <p className="text-xl text-gray-600 mb-6">
-              COOPCAM 15 ANOS. JUNTOS VAMOS ALÉM!
+              COOPCAM 15 ANOS.<br />
+              JUNTOS VAMOS ALÉM!
             </p>
             <p className="text-gray-600">
-              A Coopcam, cooperativa de transportes que se destaca pela excelência e 
-              compromisso com a qualidade, celebra 15 anos de uma trajetória bem-sucedida.
+              A Coopcam, cooperativa de transportes que se destaca pela excelência e compromisso com a qualidade, celebra 15 anos de uma trajetória bem-sucedida.
             </p>
             <p className="text-gray-600 mt-4">
-              Fundada em 2008, através da união e cooperação entre 20 sócios fundadores 
-              e com apenas 2 colaboradores, a Coopcam vem evoluindo constantemente para 
-              oferecer o melhor aos seus cooperados e se consagrando como referência na 
-              oferta de serviços de transporte seguros e eficientes.
+              Fundada em em 2008, através da união e cooperação entre 20 sócios fundadores e com apenas 2 colaboradores, a Coopcam vem evoluindo constantemente para oferecer o melhor aos seus cooperados e se consagrando como referência na oferta de serviços de transporte seguros e eficientes,&nbsp;
             </p>
           </div>
-        </motion.div>
+        </div>
 
+        {/* Facilities Section */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {facilities.map((facility, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={timelineVariants}
-              custom={index}
-              initial="hidden"
-              animate={controls}
+              className="opacity-0 animate-fade-slide-up"
+              style={{
+                animationDelay: `${index * 200}ms`,
+                animationFillMode: 'forwards'
+              }}
             >
-              <Card className="overflow-hidden">
+              <Card className="overflow-hidden h-full">
                 <div className="aspect-[4/3] relative">
                   <Image
                     src={facility.image}
@@ -137,7 +91,7 @@ export default function CorporateSection() {
                   />
                 </div>
                 <CardContent className="pt-6">
-                  <h3 className="font-bold text-lg mb-2 text-[#257367]">
+                  <h3 className="font-bold text-lg mb-2 text-[#fa8028]">
                     {facility.title}
                   </h3>
                   <p className="text-gray-600 text-sm">
@@ -145,29 +99,31 @@ export default function CorporateSection() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
 
+        {/* Identidade Corporativa Section */}
         <div className="bg-gray-50 rounded-lg p-12">
-          <h3 className="text-2xl font-bold text-center text-[#9D9D9D] mb-12">
-            Identidade Corporativa
+          <h3 className="text-2xl font-bold text-center text-[#fa8028] mb-12">
+            IDENTIDADE CORPORATIVA
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {identityCards.map((card, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={timelineVariants}
-                custom={index}
-                initial="hidden"
-                animate={controls}
+                className="opacity-0 animate-fade-slide-up"
+                style={{
+                  animationDelay: `${index * 200}ms`,
+                  animationFillMode: 'forwards'
+                }}
               >
-                <Card className="bg-white">
+                <Card className="bg-white h-full">
                   <CardContent className="pt-6">
-                    <div className="text-[#257367] mb-4 flex justify-center">
+                    <div className="text-[#fa8028] mb-4 flex justify-center">
                       {card.icon}
                     </div>
-                    <h4 className="text-xl font-bold text-center mb-4 text-[#257367]">
+                    <h4 className="text-xl font-bold text-center mb-4 text-[#fa8028]">
                       {card.title}
                     </h4>
                     <p className="text-gray-600 text-center">
@@ -175,7 +131,7 @@ export default function CorporateSection() {
                     </p>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

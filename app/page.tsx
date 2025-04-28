@@ -16,8 +16,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <CorporateSection />
-      <AboutSection />
-      <ValuesSection />
+      {/* <AboutSection /> */}
+      {/* <ValuesSection /> */}
       <CouncilSection />
       <ServicesSection />
       <NewsSection />

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
 
 const navigation = [
   { name: "Início", href: "/" },
@@ -52,14 +53,18 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? "bg-white shadow-md" : "bg-transparent"
-    }`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 bg-[#257367]`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <span className="text-2xl font-bold text-[#257367]">COOPCAM</span>
+            <Image 
+              src="/logo.png" 
+              alt="COOPCAM Logo"
+              width={150}
+              height={50}
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -69,9 +74,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`text-sm font-medium transition-colors ${
-                  isScrolled ? "text-gray-700 hover:text-[#257367]" : "text-white hover:text-white/80"
-                }`}
+                className="text-sm font-medium text-white hover:text-white/80 transition-colors"
               >
                 {item.name}
               </Link>

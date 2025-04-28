@@ -1,9 +1,22 @@
-1:HL["/_next/static/css/5db7628a806f4965.css","style"]
-0:["Cv9Ck09Gmb75AkV6PGkSM",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5db7628a806f4965.css","precedence":"next"}]],"$L3"]]]]
-4:I{"id":1443,"chunks":["272:static/chunks/webpack-d0e6e6cc70c9ce8e.js","971:static/chunks/fd9d1056-117c9a4e8f44a195.js","864:static/chunks/864-3899a5aaa9a1a20e.js"],"name":"","async":false}
-5:I{"id":8639,"chunks":["272:static/chunks/webpack-d0e6e6cc70c9ce8e.js","971:static/chunks/fd9d1056-117c9a4e8f44a195.js","864:static/chunks/864-3899a5aaa9a1a20e.js"],"name":"","async":false}
-7:I{"id":5146,"chunks":["272:static/chunks/webpack-d0e6e6cc70c9ce8e.js","971:static/chunks/fd9d1056-117c9a4e8f44a195.js","864:static/chunks/864-3899a5aaa9a1a20e.js"],"name":"","async":false}
-8:I{"id":5499,"chunks":["271:static/chunks/271-d0c3739f3a9f4dec.js","931:static/chunks/app/page-7b588a6f6cedd69c.js"],"name":"","async":false}
-2:[null,["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_d65c78","children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[],"childProp":{"current":["$L6",["$","$L7",null,{"propsForComponent":{"params":{}},"Component":"$8"}],null],"segment":"__PAGE__"},"styles":[]}]}]}],null]
-3:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"COOPCAM - Cooperativa de Transporte"}],["$","meta","2",{"name":"description","content":"Soluções em transporte de cargas e passageiros com excelência e segurança."}],["$","meta","3",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-6:null
+1:"$Sreact.fragment"
+2:I[7555,[],""]
+3:I[1295,[],""]
+4:I[894,[],"ClientPageRoot"]
+5:I[1697,["738","static/chunks/738-67951875e116eba7.js","974","static/chunks/app/page-357f0a47bcfb8647.js"],"default"]
+8:I[9665,[],"MetadataBoundary"]
+a:I[9665,[],"OutletBoundary"]
+d:I[4911,[],"AsyncMetadataOutlet"]
+f:I[9665,[],"ViewportBoundary"]
+11:I[6614,[],""]
+:HL["/_next/static/css/dd8ccf1617a2d8ed.css","style"]
+0:{"P":null,"b":"nICwGdEKPJYjQJAobVaUY","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/dd8ccf1617a2d8ed.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_d65c78","children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L4",null,{"Component":"$5","searchParams":{},"params":{},"promises":["$@6","$@7"]}],["$","$L8",null,{"children":"$L9"}],null,["$","$La",null,{"children":["$Lb","$Lc",["$","$Ld",null,{"promise":"$@e"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","IhNATXZrHH4tl0cr0sWx4",{"children":[["$","$Lf",null,{"children":"$L10"}],null]}],null]}],false]],"m":"$undefined","G":["$11","$undefined"],"s":false,"S":true}
+12:"$Sreact.suspense"
+13:I[4911,[],"AsyncMetadata"]
+6:{}
+7:{}
+9:["$","$12",null,{"fallback":null,"children":["$","$L13",null,{"promise":"$@14"}]}]
+c:null
+10:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+b:null
+14:{"metadata":[["$","title","0",{"children":"COOPCAM - Cooperativa de Transporte"}],["$","meta","1",{"name":"description","content":"Soluções em transporte de cargas e passageiros com excelência e segurança."}]],"error":null,"digest":"$undefined"}
+e:{"metadata":"$14:metadata","error":null,"digest":"$undefined"}

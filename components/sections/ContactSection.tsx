@@ -19,7 +19,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-20 bg-[#257367] text-white">
+    <section id="about" className="py-20 bg-[#257367] text-white">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12">
           <div>
@@ -93,20 +93,7 @@ export default function ContactSection() {
               <p>Sábado: 8h às 12h</p>
             </div>
 
-            <div>
-              <h3 className="text-xl font-bold mb-6">Redes Sociais</h3>
-              <div className="flex gap-4">
-                <a href="#" className="hover:text-white/80">
-                  <Facebook className="h-6 w-6" />
-                </a>
-                <a href="#" className="hover:text-white/80">
-                  <Instagram className="h-6 w-6" />
-                </a>
-                <a href="#" className="hover:text-white/80">
-                  <Linkedin className="h-6 w-6" />
-                </a>
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>

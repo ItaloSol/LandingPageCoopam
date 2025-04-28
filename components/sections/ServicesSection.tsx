@@ -73,139 +73,84 @@ export default function ServicesSection() {
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-[#9D9D9D] mb-12">
+        <h2 className="text-3xl font-bold text-center text-[#fa8028] mb-12">
           Serviços e Frota
         </h2>
 
-        <Tabs defaultValue="cargo" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="cargo">Transporte de Cargas</TabsTrigger>
-            <TabsTrigger value="passenger">Transporte de Passageiros</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="cargo">
-            <div className="space-y-12">
-              <div className="aspect-[21/9] relative rounded-lg overflow-hidden mb-12">
-                <Image
-                  src="/transp_c.webp"
-                  alt="Transporte de Cargas"
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#257367]/80 to-transparent flex items-center">
-                  <div className="text-white p-8 max-w-2xl">
-                    <h3 className="text-3xl font-bold mb-4">
-                      Transporte de Cargas
-                    </h3>
-                    <p className="text-lg">
-                      Soluções completas em transporte de cargas, com segurança e eficiência para sua empresa.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                {cargoServices.map((service, index) => (
-                  <div
-                    key={index}
-                    className="hover:shadow-lg transition-all duration-200 hover:-translate-y-1"
-                  >
-                    <Card>
-                      <CardContent className="pt-6">
-                        <div className="text-[#257367] mb-4">
-                          {service.icon}
-                        </div>
-                        <h3 className="font-bold text-lg mb-2">{service.title}</h3>
-                        <p className="text-gray-600 text-sm">{service.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-8">
-                <h3 className="text-xl font-bold mb-6 text-[#257367]">Nossa Frota</h3>
-                <ul className="space-y-3">
-                  {fleetInfo.cargo.map((item, index) => (
-                    <li 
-                      key={index}
-                      className="flex items-center gap-2 text-gray-600"
-                    >
-                      <Truck className="h-5 w-5 text-[#257367]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        <div className="space-y-16">
+          {/* Cargo Services */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <Truck className="h-10 w-10 mx-auto text-[#fa8028]" />
+              <h3 className="text-2xl font-bold mt-4 text-[#fa8028]">Transporte de Cargas</h3>
             </div>
-          </TabsContent>
-
-          <TabsContent value="passenger">
-            <div className="space-y-12">
-              <div className="aspect-[21/9] relative rounded-lg overflow-hidden mb-12">
-                <Image
-                  src="/trans_p.webp"
-                  alt="Transporte de Passageiros"
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#257367]/80 to-transparent flex items-center">
-                  <div className="text-white p-8 max-w-2xl">
-                    <h3 className="text-3xl font-bold mb-4">
-                      Transporte de Passageiros
-                    </h3>
-                    <p className="text-lg">
-                      Conforto e segurança em viagens para grupos, escolas e empresas.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                {passengerServices.map((service, index) => (
-                  <div
-                    key={index}
-                    className="hover:shadow-lg transition-all duration-200 hover:-translate-y-1"
-                  >
-                    <Card>
-                      <CardContent className="pt-6">
-                        <div className="text-[#257367] mb-4">
-                          {service.icon}
-                        </div>
-                        <h3 className="font-bold text-lg mb-2">{service.title}</h3>
-                        <p className="text-gray-600 text-sm">{service.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-gray-50 rounded-lg p-8">
-                <h3 className="text-xl font-bold mb-6 text-[#257367]">Nossa Frota</h3>
-                <ul className="space-y-3">
-                  {fleetInfo.passenger.map((item, index) => (
-                    <li 
-                      key={index}
-                      className="flex items-center gap-2 text-gray-600"
-                    >
-                      <Bus className="h-5 w-5 text-[#257367]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {cargoServices.map((service, index) => (
+                <Card key={index} className="hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+                  <CardContent className="pt-6">
+                    <div className="text-[#fa8028] mb-4">
+                      {service.icon}
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">{service.title}</h3>
+                    <p className="text-gray-600 text-sm">{service.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-          </TabsContent>
-        </Tabs>
+
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-xl font-bold mb-4 text-[#fa8028]">Nossa Frota de Cargas</h3>
+              <ul className="space-y-2">
+                {fleetInfo.cargo.map((item, index) => (
+                  <li key={index} className="flex items-start gap-2 text-gray-600">
+                    <Truck className="h-5 w-5 mt-1 text-[#fa8028]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Passenger Services */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <Bus className="h-10 w-10 mx-auto text-[#fa8028]" />
+              <h3 className="text-2xl font-bold mt-4 text-[#fa8028]">Transporte de Passageiros</h3>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {passengerServices.map((service, index) => (
+                <Card key={index} className="hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+                  <CardContent className="pt-6">
+                    <div className="text-[#fa8028] mb-4">
+                      {service.icon}
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">{service.title}</h3>
+                    <p className="text-gray-600 text-sm">{service.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-xl font-bold mb-4 text-[#fa8028]">Nossa Frota de Passageiros</h3>
+              <ul className="space-y-2">
+                {fleetInfo.passenger.map((item, index) => (
+                  <li key={index} className="flex items-start gap-2 text-gray-600">
+                    <Bus className="h-5 w-5 mt-1 text-[#fa8028]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
 
         <div className="mt-12 text-center">
           <Button 
             size="lg" 
-            className="bg-[#257367] hover:bg-[#1a5249] text-white transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+            className="bg-[#fa8028] hover:bg-[#e67323] text-white transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
             onClick={handleWhatsAppClick}
           >
             <MessageSquare className="mr-2 h-4 w-4" />

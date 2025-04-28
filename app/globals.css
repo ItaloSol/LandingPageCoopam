@@ -78,5 +78,82 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Intro', sans-serif;
   }
+}
+
+@font-face {
+  font-family: 'Intro';
+  src: url('/fonts/Intro-Thin-Alt.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Intro';
+  src: url('/fonts/Intro-Light-Alt.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Intro';
+  src: url('/fonts/Intro-Book-Alt.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Intro';
+  src: url('/fonts/Intro-Regular-Alt.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Intro';
+  src: url('/fonts/Intro-Bold-Alt.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Intro';
+  src: url('/fonts/Intro-Black-Alt.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.6s ease-out forwards;
 }
