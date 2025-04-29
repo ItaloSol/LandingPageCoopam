@@ -44,6 +44,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+  
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -70,24 +71,26 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
-
-@layer base {
+  
   * {
     @apply border-border;
+    font-family: 'Intro';
   }
+  
   body {
     @apply bg-background text-foreground;
     font-family: 'Intro';
   }
-  h1, h2, h3, h4, h5, h6, p, span, a, button {
-    font-family: 'Intro';
+  
+  h1, h2, h3, h4, h5, h6, p, span, a, button, div {
+    font-family: 'Intro' !important;
   }
 }
 
 @font-face {
   font-family: 'Intro';
-  src: url('/fonts/Intro-Thin-Alt.woff') format('woff');
+  src: url('/fonts/Intro-Thin-Alt.woff2') format('woff2'),
+       url('/fonts/Intro-Thin-Alt.woff') format('woff');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -95,7 +98,8 @@
 
 @font-face {
   font-family: 'Intro';
-  src: url('/fonts/Intro-Light-Alt.woff') format('woff');
+  src: url('/fonts/Intro-Light-Alt.woff2') format('woff2'),
+       url('/fonts/Intro-Light-Alt.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -103,7 +107,8 @@
 
 @font-face {
   font-family: 'Intro';
-  src: url('/fonts/Intro-Book-Alt.woff') format('woff');
+  src: url('/fonts/Intro-Book-Alt.woff2') format('woff2'),
+       url('/fonts/Intro-Book-Alt.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -111,7 +116,8 @@
 
 @font-face {
   font-family: 'Intro';
-  src: url('/fonts/Intro-Regular-Alt.woff') format('woff');
+  src: url('/fonts/Intro-Regular-Alt.woff2') format('woff2'),
+       url('/fonts/Intro-Regular-Alt.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -119,15 +125,17 @@
 
 @font-face {
   font-family: 'Intro';
-  src: url('/fonts/Intro-Bold-Alt.woff') format('woff');
+  src: url('/fonts/Intro-Bold-Alt.woff2') format('woff2'),
+       url('/fonts/Intro-Bold-Alt.woff') format('woff');
   font-weight: 700;
-  font-style: normal;
+  font-style: bold;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Intro';
-  src: url('/fonts/Intro-Black-Alt.woff') format('woff');
+  src: url('/fonts/Intro-Black-Alt.woff2') format('woff2'),
+       url('/fonts/Intro-Black-Alt.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
