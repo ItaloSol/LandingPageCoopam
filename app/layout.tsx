@@ -4,8 +4,46 @@ import type { Metadata } from 'next';
 const font = "'Plus Jakarta Sans', sans-serif";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://coopcam-coop.web.app/'),
   title: 'COOPCAM - Cooperativa de Transporte',
   description: 'Soluções em transporte de cargas e passageiros com excelência e segurança.',
+  openGraph: {
+    title: 'COOPCAM - Cooperativa de Transporte',
+    description: 'Soluções em transporte de cargas e passageiros com excelência e segurança.',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 900,
+        height: 360,
+        alt: 'COOPCAM - Cooperativa de Transporte',
+      },
+    ],
+    siteName: 'COOPCAM',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'COOPCAM - Cooperativa de Transporte',
+    description: 'Soluções em transporte de cargas e passageiros com excelência e segurança.',
+    images: ['/og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://coopcam-coop.web.app/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
