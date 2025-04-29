@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Temas de cor */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -44,7 +45,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-  
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -71,22 +72,21 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-  
-  * {
-    @apply border-border;
-    font-family: 'Intro';
-  }
-  
+
+  /* Aplica fonte padrão ao body */
   body {
     @apply bg-background text-foreground;
-    font-family: 'Intro';
+    font-family: 'Intro', sans-serif;
   }
-  
-  h1, h2, h3, h4, h5, h6, p, span, a, button, div {
-    font-family: 'Intro' !important;
+
+  /* Garante que todos os elementos usem a fonte */
+  h1, h2, h3, h4, h5, h6,
+  p, span, a, button, div, input, textarea, label {
+    font-family: 'Intro', sans-serif !important;
   }
 }
 
+/* Fontes personalizadas */
 @font-face {
   font-family: 'Intro';
   src: url('/fonts/Intro-Thin-Alt.woff2') format('woff2'),
@@ -128,7 +128,7 @@
   src: url('/fonts/Intro-Bold-Alt.woff2') format('woff2'),
        url('/fonts/Intro-Bold-Alt.woff') format('woff');
   font-weight: 700;
-  font-style: bold;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -141,13 +141,10 @@
   font-display: swap;
 }
 
+/* Animações */
 @keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fade-slide-up {
