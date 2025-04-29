@@ -104,6 +104,7 @@ export default function ServicesSection() {
                 <li key={index}>{item}</li>
               ))}
             </ul>
+            
           </div>
         </div>
 

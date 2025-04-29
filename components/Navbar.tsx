@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Truck } from "lucide-react";
 import Image from "next/image";
 
 const navigation = [
@@ -53,9 +53,9 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 bg-[#257367]`}>
+    <nav className={`fixed w-full md:h-20 z-50 transition-all duration-300 bg-[#257367]`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image 
@@ -63,7 +63,7 @@ export default function Navbar() {
               alt="COOPCAM Logo"
               width={150}
               height={50}
-              className="h-8 w-auto"
+              className="h-7 w-auto md:h-8"
             />
           </Link>
 
@@ -85,10 +85,10 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
             <Button 
               className="bg-[#257367] hover:bg-[#1a5249] text-white"
-              onClick={handleWhatsAppClick}
+              onClick={() => window.open('https://coopcam.coop.br/carga/pages/login.php', '_blank')}
             >
-              <Phone className="mr-2 h-4 w-4" />
-              (27) 3721-4242
+               <Truck className="mr-2 h-4 w-4" />
+               ACOMPANHAR CARGA
             </Button>
           </div>
 
@@ -96,13 +96,20 @@ export default function Navbar() {
           <div className="md:hidden">
             <Button
               variant="ghost"
+              size="icon"
               className={isScrolled ? "text-gray-700" : "text-white"}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
-                <X className="h-6 w-6" />
+                <div className="flex flex-col items-center">
+                  <X className="h-5 w-5 text-white" />
+                  <span className="text-xs text-white mt-1">Menu</span>
+                </div>
               ) : (
-                <Menu className="h-6 w-6" />
+                <div className="flex flex-col items-center">
+                  <Menu className="h-5 w-5 text-white" />
+                  <span className="text-xs text-white mt-1">Menu</span>
+                </div>
               )}
             </Button>
           </div>
@@ -110,8 +117,9 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden bg-[#257367] min-h-[380px]">
+            <div className="bg-white rounded-lg">
+            <div className="px-3 py-3 space-y-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -123,13 +131,14 @@ export default function Navbar() {
                 </Link>
               ))}
               <Button 
-                className="w-full bg-[#257367] hover:bg-[#1a5249] mt-4"
-                onClick={handleWhatsAppClick}
-              >
-                <Phone className="mr-2 h-4 w-4" />
-                (27) 3721-4242
+              className="bg-[#257367] h-12 w-full hover:bg-[#1a5249] text-white"
+              onClick={() => window.open('https://coopcam.coop.br/carga/pages/login.php', '_blank')}
+            >
+                <Truck className="mr-2 h-4 w-4" />
+                ACOMPANHAR CARGA
               </Button>
             </div>
+          </div>
           </div>
         )}
       </div>

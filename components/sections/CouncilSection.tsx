@@ -70,8 +70,9 @@ const fiscalCouncil = [
 export default function CouncilSection() {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.2,
-    triggerOnce: true
+    threshold: 0.01,  // Very small threshold to trigger almost immediately
+    triggerOnce: true,
+    rootMargin: '-100px 0px'  // Adds 100px detection area above the viewport
   });
 
   useEffect(() => {
