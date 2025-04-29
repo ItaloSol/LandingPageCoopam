@@ -110,7 +110,7 @@ export default function CouncilSection() {
     <section className="py-20 bg-gray-50" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-3xl font-bold text-center text-[#fa8028] mb-16"
+          className="text-3xl font-bold text-center text-[#257367] mb-16"
           variants={titleVariants}
           initial="hidden"
           animate={controls}
@@ -122,7 +122,7 @@ export default function CouncilSection() {
           {/* Conselho de Administração */}
           <div>
             <motion.h3 
-              className="text-2xl font-bold text-center text-[#fa8028] mb-8"
+              className="text-2xl font-bold text-center text-[#257367] mb-8"
               variants={titleVariants}
               initial="hidden"
               animate={controls}
@@ -156,7 +156,7 @@ export default function CouncilSection() {
                         </div>
                       </div>
                       <div className="flex-grow flex flex-col justify-center">
-                        <h4 className="font-bold text-lg text-[#fa8028] mb-1">
+                        <h4 className="font-bold text-lg text-[#257367] mb-1">
                           {member.name}
                         </h4>
                         <p className="text-sm text-gray-600">
@@ -173,7 +173,7 @@ export default function CouncilSection() {
           {/* Conselho Fiscal */}
           <div>
             <motion.h3 
-              className="text-2xl font-bold text-center text-[#fa8028] mb-8"
+              className="text-2xl font-bold text-center text-[#257367] mb-8"
               variants={titleVariants}
               initial="hidden"
               animate={controls}
@@ -207,7 +207,7 @@ export default function CouncilSection() {
                         </div>
                       </div>
                       <div className="flex-grow flex flex-col justify-center">
-                        <h4 className="font-bold text-lg text-[#fa8028] mb-1">
+                        <h4 className="font-bold text-lg text-[#257367] mb-1">
                           {member.name}
                         </h4>
                         <p className="text-sm text-gray-600">

@@ -9,19 +9,21 @@ import ServicesSection from '@/components/sections/ServicesSection';
 import NewsSection from '@/components/sections/NewsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CorporateSection from '@/components/sections/CorporateSection';
-
+import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
       <CorporateSection />
+
       {/* <AboutSection /> */}
-      {/* <ValuesSection /> */}
       <CouncilSection />
       <ServicesSection />
+      <ValuesSection />
       <NewsSection />
       <ContactSection />
+      <Footer />
     </main>
   );
 }

@@ -72,78 +72,70 @@ export default function ServicesSection() {
 
   return (
     <section id="services" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-[#fa8028] mb-12">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <h2 className="text-3xl font-bold text-center text-[#257367] mb-12">
           Serviços e Frota
         </h2>
 
-        <div className="space-y-16">
-          {/* Cargo Services */}
-          <div className="space-y-8">
-            <div className="text-center">
-              <Truck className="h-10 w-10 mx-auto text-[#fa8028]" />
-              <h3 className="text-2xl font-bold mt-4 text-[#fa8028]">Transporte de Cargas</h3>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {cargoServices.map((service, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
-                  <CardContent className="pt-6">
-                    <div className="text-[#fa8028] mb-4">
-                      {service.icon}
-                    </div>
-                    <h3 className="font-bold text-lg mb-2">{service.title}</h3>
-                    <p className="text-gray-600 text-sm">{service.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-[#fa8028]">Nossa Frota de Cargas</h3>
-              <ul className="space-y-2">
-                {fleetInfo.cargo.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 text-gray-600">
-                    <Truck className="h-5 w-5 mt-1 text-[#fa8028]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        {/* Cargo Services */}
+        <div className="flex flex-col md:flex-row md:items-center md:space-x-10 mb-16">
+          <div className="w-full md:w-1/2">
+            <Image 
+              src="/transp_c.webp" 
+              alt="Transporte de Cargas"
+              width={600}
+              height={400}
+              className="rounded-md object-cover w-full"
+            />
           </div>
-
-          {/* Passenger Services */}
-          <div className="space-y-8">
-            <div className="text-center">
-              <Bus className="h-10 w-10 mx-auto text-[#fa8028]" />
-              <h3 className="text-2xl font-bold mt-4 text-[#fa8028]">Transporte de Passageiros</h3>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {passengerServices.map((service, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
-                  <CardContent className="pt-6">
-                    <div className="text-[#fa8028] mb-4">
-                      {service.icon}
-                    </div>
-                    <h3 className="font-bold text-lg mb-2">{service.title}</h3>
-                    <p className="text-gray-600 text-sm">{service.description}</p>
-                  </CardContent>
-                </Card>
+          <div className="mt-6 md:mt-0 md:w-1/2">
+            <h2 className="text-[#257367] font-extrabold text-xl md:text-2xl uppercase">
+              TRANSPORTE DE CARGAS
+            </h2>
+            <div className="h-0.5 w-10 bg-[#257367] mt-2 mb-4"></div>
+            <p className="text-gray-600 leading-relaxed">
+              {cargoServices.map(service => service.title).join('\n')}
+            </p>
+            <p className="text-[#257367] font-bold mt-6 mb-2">
+              Possuímos em nossa frota:
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm">
+              {fleetInfo.cargo.map((item, index) => (
+                <li key={index}>{item}</li>
               ))}
-            </div>
+            </ul>
+          </div>
+        </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-[#fa8028]">Nossa Frota de Passageiros</h3>
-              <ul className="space-y-2">
-                {fleetInfo.passenger.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 text-gray-600">
-                    <Bus className="h-5 w-5 mt-1 text-[#fa8028]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <hr className="border-t border-gray-200 mb-16" />
+
+        {/* Passenger Services */}
+        <div className="flex flex-col md:flex-row md:items-center md:space-x-10">
+          <div className="md:w-1/2 order-2 md:order-1 mt-6 md:mt-0">
+            <h2 className="text-[#257367] font-extrabold text-xl md:text-2xl uppercase">
+              TRANSPORTE DE PASSAGEIROS
+            </h2>
+            <div className="h-0.5 w-10 bg-[#257367] mt-2 mb-4"></div>
+            <p className="text-gray-600 leading-relaxed">
+              {passengerServices.map(service => service.title).join('\n')}
+            </p>
+            <p className="text-[#257367] font-bold mt-6 mb-2">
+              Possuímos em nossa frota:
+            </p>
+            <ul className="list-disc list-inside text-gray-600 space-y-1 text-sm">
+              {fleetInfo.passenger.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="w-full md:w-1/2 order-1 md:order-2">
+            <Image 
+              src="/trans_p.webp" 
+              alt="Transporte de Passageiros"
+              width={600}
+              height={400}
+              className="rounded-md object-cover w-full"
+            />
           </div>
         </div>
 

@@ -76,69 +76,21 @@
   /* Aplica fonte padrão ao body */
   body {
     @apply bg-background text-foreground;
-    font-family: 'Intro', sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
   }
 
   /* Garante que todos os elementos usem a fonte */
   h1, h2, h3, h4, h5, h6,
   p, span, a, button, div, input, textarea, label {
-    font-family: 'Intro', sans-serif !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
   }
 }
 
-/* Fontes personalizadas */
-@font-face {
-  font-family: 'Intro';
-  src: url('/fonts/Intro-Thin-Alt.woff2') format('woff2'),
-       url('/fonts/Intro-Thin-Alt.woff') format('woff');
-  font-weight: 100;
+/* Google Fonts - Plus Jakarta Sans */
+.plus-jakarta-sans {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Intro';
-  src: url('/fonts/Intro-Light-Alt.woff2') format('woff2'),
-       url('/fonts/Intro-Light-Alt.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Intro';
-  src: url('/fonts/Intro-Book-Alt.woff2') format('woff2'),
-       url('/fonts/Intro-Book-Alt.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Intro';
-  src: url('/fonts/Intro-Regular-Alt.woff2') format('woff2'),
-       url('/fonts/Intro-Regular-Alt.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Intro';
-  src: url('/fonts/Intro-Bold-Alt.woff2') format('woff2'),
-       url('/fonts/Intro-Bold-Alt.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Intro';
-  src: url('/fonts/Intro-Black-Alt.woff2') format('woff2'),
-       url('/fonts/Intro-Black-Alt.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
 }
 
 /* Animações */
