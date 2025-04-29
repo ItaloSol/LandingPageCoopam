@@ -37,12 +37,6 @@ const recentNews = [
 ];
 
 export default function NewsSection() {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-
-  const filteredNews = selectedCategory
-    ? recentNews.filter(news => news.category === selectedCategory)
-    : recentNews;
-
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -58,71 +52,40 @@ export default function NewsSection() {
           </Link>
         </div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-1">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="font-semibold mb-4">Categorias</h3>
-              <div className="space-y-2">
-                <Button
-                  variant="ghost"
-                  className={`w-full justify-start ${!selectedCategory ? 'bg-[#257367] text-white' : ''}`}
-                  onClick={() => setSelectedCategory(null)}
-                >
-                  Todas
-                </Button>
-                {categories.map((category) => (
-                  <Button
-                    key={category}
-                    variant="ghost"
-                    className={`w-full justify-start ${
-                      selectedCategory === category ? 'bg-[#257367] text-white' : ''
-                    }`}
-                    onClick={() => setSelectedCategory(category)}
-                  >
-                    {category}
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-3">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredNews.map((news) => (
-                <Link href={`/noticias/${news.id}`} key={news.id}>
-                  <Card className="overflow-hidden h-full hover:shadow-md transition-shadow">
-                    <div className="aspect-video relative">
-                      <Image
-                        src={news.image}
-                        alt={news.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        priority={news.id === 1}
-                      />
-                    </div>
-                    <CardContent className="pt-6">
-                      <Badge className="mb-2 bg-[#257367]">{news.category}</Badge>
-                      <h3 className="font-bold text-lg mb-2 line-clamp-2 hover:text-[#257367] transition-colors">
-                        {news.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                        {news.summary}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-500">
-                          {new Date(news.date).toLocaleDateString('pt-BR')}
-                        </span>
-                        <span className="text-[#257367] text-sm font-medium">
-                          Leia Mais
-                        </span>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </div>
+        <div className="grid lg:grid-cols-3 gap-6">
+          {recentNews.map((news) => (
+            <Link href={`/noticias/${news.id}`} key={news.id}>
+              <Card className="overflow-hidden h-full hover:shadow-md transition-shadow">
+                <div className="aspect-video relative">
+                  <Image
+                    src={news.image}
+                    alt={news.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={news.id === 1}
+                  />
+                </div>
+                <CardContent className="pt-6">
+                  <Badge className="mb-2 bg-[#257367]">{news.category}</Badge>
+                  <h3 className="font-bold text-lg mb-2 line-clamp-2 hover:text-[#257367] transition-colors">
+                    {news.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                    {news.summary}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-500">
+                      {new Date(news.date).toLocaleDateString('pt-BR')}
+                    </span>
+                    <span className="text-[#257367] text-sm font-medium">
+                      Leia Mais
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
