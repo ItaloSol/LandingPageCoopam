@@ -1,6 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Phone } from "lucide-react";
+
+const handleWhatsAppClick = () => {
+  const message = "Olá! Gostaria de solicitar um orçamento para serviços de transporte.";
+  const whatsappUrl = `https://wa.me/5527999110772?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, '_blank');
+};
 
 export default function HeroSection() {
   return (
@@ -17,14 +25,26 @@ export default function HeroSection() {
             priority
           />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#257367]/80 to-[#1a5249]/80"></div>
       </div>
       
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 text-center max-w-[800px]">
-        <h1 className="text-5xl md:text-6xl font-bold text-white">
-          Tradição e Excelência em transportes de cargas e passageiros
-        </h1>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-16 [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
+            Tradição e Excelência em transportes de cargas e passageiros
+          </h1>
+          <div className="flex gap-4">
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="text-white bg-white/10 -translate-y-0.5 shadow-lg transition-all duration-300"
+              onClick={handleWhatsAppClick}
+            >
+              <Phone className="mr-2 h-4 w-4" />
+              FALE CONOSCO
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -52,9 +52,9 @@ const passengerServices = [
 
 const fleetInfo = {
   cargo: [
-    "Utilitários para agilidade nas pequenas cargas e entregas urbanas",
-    "Caminhões de pequeno e médio porte proporcionando adequada rapidez",
-    "Caminhões pesados – Carretas e Truck's – para carga seca e a granel"
+    "Utilitários (pequenas cargas urbanas)",
+    "Caminhões pequenos/médios (rapidez)",
+    "Carretas e Truck's (cargas pesadas)"
   ],
   passenger: [
     "Ônibus Leito, Executivo ou Convencional",
