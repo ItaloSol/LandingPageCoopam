@@ -1,42 +1,46 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ChevronRight } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
-const categories = ["Operações", "Sustentabilidade", "Novidades", "Tecnologia"];
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { NewsModal } from '@/components/NewsModal';
 
-const recentNews = [
-  {
-    id: 1,
-    title: "Dia C 2024: evento realizado em São Gabriel da Palha reforça poder do cooperativismo",
-    summary: "Com a proposta de estreitar ainda mais os laços com a comunidade, as cooperativas Cooabriel, Coopcam,  Coopesg e Sicoob realizaram em São Gabriel da Palha, um grande evento em comemoração ao Dia de Cooperar 2024.",
-    image: "/1.webp",
-    date: "2024-02-15",
-    category: "Sustentabilidade"
-  },
-  {
-    id: 2,
-    title: "Coopcam realiza a AGO 2024 com muito sucesso",
-    summary: "A Coopcam realizou no dia 23 de março de 2024 a sua Assembleia Geral Ordinária presencial.",
-    image: "/diac.webp",
-    date: "2024-02-10",
-    category: "Operações"
-  },
-  {
-    id: 3,
-    title: "DIA C 2023: Cooperativas de São Gabriel da Palha se unem para celebrar o Dia do Cooperativismo",
-    summary: "Intercooperação e muita alegria foram presenças marcantes na celebração do Dia C 2023, em São Gabriel da Palha. O dia festivo aconteceu no último dia 2 e foi realizado pelas cooperativas Cooabriel, Coopcam, Coopesg e Sicoob Conexão, com o apoio da cooperativa mirim Coop-União.  As ações foram patrocinadas pelo Sistema OCB-ES/ SESCOOP/ES.",
-    image: "/diac2.webp",
-    date: "2024-07-15",
-    category: "Novidades"
-  }
-];
+interface News {
+  id: number; // Change type from string to number
+  titulo: string;
+  descricao: string;
+  conteudo: string;
+  imagens: string[];
+  data: string;
+  categoria: string;
+}
 
 export default function NewsSection() {
+  const [news, setNews] = useState<News[]>([]);
+  const [selectedNews, setSelectedNews] = useState<News | null>(null);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch('/api/noticias');
+        const data = await response.json();
+        // Sort news by date in descending order (newest first)
+        const sortedNews = data.noticias.sort((a: News, b: News) => 
+          new Date(b.data).getTime() - new Date(a.data).getTime()
+        );
+        setNews(sortedNews);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -53,30 +57,41 @@ export default function NewsSection() {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
-          {recentNews.map((news) => (
-            <Link href={`/noticias/${news.id}`} key={news.id}>
+          {news.slice(0, 3).map((item) => (
+            <div
+              key={item.id}
+              onClick={() => setSelectedNews(item)}
+              className="cursor-pointer"
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  setSelectedNews(item);
+                }
+              }}
+            >
               <Card className="overflow-hidden h-full hover:shadow-md transition-shadow">
                 <div className="aspect-video relative">
                   <Image
-                    src={news.image}
-                    alt={news.title}
+                    src={item.imagens[0]}
+                    alt={item.titulo}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={news.id === 1}
+                    priority={true}
                   />
                 </div>
                 <CardContent className="pt-6">
-                  <Badge className="mb-2 bg-[#257367]">{news.category}</Badge>
+                  <Badge className="mb-2 bg-[#257367]">{item.categoria}</Badge>
                   <h3 className="font-bold text-lg mb-2 line-clamp-2 hover:text-[#257367] transition-colors">
-                    {news.title}
+                    {item.titulo}
                   </h3>
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                    {news.summary}
+                    {item.descricao}
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">
-                      {new Date(news.date).toLocaleDateString('pt-BR')}
+                      {new Date(item.data).toLocaleDateString('pt-BR')}
                     </span>
                     <span className="text-[#257367] text-sm font-medium">
                       Leia Mais
@@ -84,9 +99,24 @@ export default function NewsSection() {
                   </div>
                 </CardContent>
               </Card>
-            </Link>
+            </div>
           ))}
         </div>
+
+        <NewsModal
+          isOpen={!!selectedNews}
+          onClose={() => setSelectedNews(null)}
+          // No change needed here now, as selectedNews.id is correctly typed as number
+          news={selectedNews ? { 
+            id: selectedNews.id, // This is now number | undefined
+            title: selectedNews.titulo,
+            content: selectedNews.conteudo,
+            image: selectedNews.imagens[0],
+            gallery: selectedNews.imagens,
+            date: selectedNews.data,
+            category: selectedNews.categoria
+          } : null /* If selectedNews is null, pass null */} 
+        />
       </div>
     </section>
   );
