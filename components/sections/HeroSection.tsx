@@ -16,9 +16,9 @@ export default function HeroSection() {
       {/* Background Image and Gradient Overlay */}
       <div className="absolute inset-0 w-full h-full">
         <picture>
-          <source media="(min-width: 768px)" srcSet="/about.webp" />
+          <source media="(min-width: 768px)" srcSet="/Banner_Topo.webp" />
           <Image
-            src="/mobile.webp"
+            src="/Banner_Topo.webp"
             alt="Background"
             fill
             className="object-cover bg-black"

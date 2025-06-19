@@ -1,73 +1,143 @@
 "use client";
 
-import { useEffect } from "react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Building2, Target, Compass, Heart } from "lucide-react";
+import { FaCheck } from "react-icons/fa";
 import Image from "next/image";
 
-const facilities = [
-  {
-    title: "Instalações Modernas",
-    description: "Sede administrativa ampla e moderna com escritórios, sala de reunião, sala vip para cooperados e loja de conveniências.",
-    image: "/insta.webp"
-  },
-  {
-    title: "Amplo Pátio Logístico",
-    description: "Espaço amplo para manobras e estacionamento seguro monitorado 24 horas.",
-    image: "/patio.webp"
-  },
-  {
-    title: "Ponto de Combustível",
-    description: "Abastecimento com preços e vantagens exclusivas para cooperados, representando grande economia.",
-    image: "/posto-2.webp"
-  },
-  {
-    title: "Área de Lazer",
-    description: "Espaço para recreação e lazer composto por campo de futebol, espaço para festas e quiosque com bela vista para o lago.",
-    image: "/area.webp"
-  }
-];
-
-const identityCards = [
-  {
-    icon: <Building2 className="h-8 w-8" />,
-    title: "MISSÃO",
-    content: "Oferecer ao cooperado serviços do ramo de transporte de cargas, buscando a excelência e a satisfação dos nossos clientes e cooperados, com segurança e qualidade por meio do cooperativismo."
-  },
-  {
-    icon: <Target className="h-8 w-8" />,
-    title: "VISÃO",
-    content: "Ser reconhecida como uma das melhores empresas de transportes de carga na percepção dos nossos clientes, colaboradores, sociedade e principalmente dos nossos cooperados, tendo como pilares a melhoria contínua e o crescimento constante."
-  },
-  {
-    icon: <Heart className="h-8 w-8" />,
-    title: "VALORES",
-    content: "Cooperação, Transparência, Ética, Profissionalismo, Parceria de respeito com clientes e colaboradores, Comprometimento e Organização."
-  }
-];
-
 export default function CorporateSection() {
+  const [currentImage, setCurrentImage] = useState(0);
+  const facilities = [
+    {
+      title: "Instalações Modernas",
+      description: "Sede administrativa ampla e moderna com escritórios, sala de reunião, sala vip para cooperados e loja de conveniências.",
+      image: "/insta.webp"
+    },
+    {
+      title: "Amplo Pátio Logístico",
+      description: "Espaço amplo para manobras e estacionamento seguro monitorado 24 horas.",
+      image: "/patio.webp"
+    },
+    {
+      title: "Ponto de Combustível",
+      description: "Abastecimento com preços e vantagens exclusivas para cooperados, representando grande economia.",
+      image: "/posto-2.webp"
+    },
+    {
+      title: "Área de Lazer",
+      description: "Espaço para recreação e lazer composto por campo de futebol, espaço para festas e quiosque com bela vista para o lago.",
+      image: "/area.webp"
+    }
+  ];
+  const images = [
+    {
+      src: "/patio.webp",
+      alt: "Amplo pátio logístico da Coopcam"
+    },
+    {
+      src: "/posto-2.webp",
+      alt: "Ponto de combustível da Coopcam"
+    },
+    {
+      src: "/insta.webp",
+      alt: "Instalações modernas da Coopcam"
+    },
+    {
+      src: "/area.webp",
+      alt: "Área de lazer da Coopcam"
+    }
+  ];
+
+  const features = [
+    "Frota moderna\nE diversificada",
+    "Operação logística\nIntegrada",
+    "Atendimento\nPersonalizado",
+    "Preços justos e\nCompetitivos",
+    "Frota rastreada\ne segura",
+    "Responsabilidade\ncom o Meio Ambiente"
+  ];
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 opacity-0 animate-fade-in">
-          <h2 className="text-3xl font-bold text-[#257367] mb-4">
-            QUEM SOMOS?
-          </h2>
-          <div className="max-w-3xl mx-auto">
-            <p className="text-xl text-gray-600 mb-6">
-              COOPCAM 15 ANOS.<br />
-              JUNTOS VAMOS ALÉM!
-            </p>
-            <p className="text-gray-600">
-              A Coopcam, cooperativa de transportes que se destaca pela excelência e compromisso com a qualidade, celebra 15 anos de uma trajetória bem-sucedida.
-            </p>
-            <p className="text-gray-600 mt-4">
-              Fundada em em 2008, através da união e cooperação entre 20 sócios fundadores e com apenas 2 colaboradores, a Coopcam vem evoluindo constantemente para oferecer o melhor aos seus cooperados e se consagrando como referência na oferta de serviços de transporte seguros e eficientes,&nbsp;
-            </p>
-          </div>
+    <section className="relative bg-gray-50 min-h-screen">
+      {/* Background image with overlay */}
+     <div className="container  mx-auto px-4 max-w-7xl overflow-x-hidden ">
+
+      {/* Main content */}
+      <div className="max-w-[1440px] mx-auto px-6 py-10 md:py-16 lg:py-20 flex flex-col lg:flex-row items-start gap-10 lg:gap-20 relative z-10">
+        {/* Left text block */}
+        <div className="flex flex-col max-w-[480px] text-[#257367]">
+          <h1 className="text-[56px] sm:text-[72px] font-normal leading-[1.1] font-sans">
+            Somos a
+            <strong className="font-extrabold block mt-1 text-[56px] sm:text-[72px] leading-[1.1]">
+              Coopcam
+            </strong>
+          </h1>
+          <p className="mt-6 font-extrabold text-[15px] leading-5 max-w-[350px] text-[#257367]/90">
+            Transporte com segurança, agilidade e compromisso com o seu destino.
+          </p>
+          <p className="mt-6 text-[15px] leading-5 max-w-[350px] text-[#257367]/90 font-normal">
+            Desde 2008 a COOPCAM atua com excelência no transporte de cargas e passageiros, unindo a força do cooperativismo à confiança de quem conhece o caminho.
+          </p>
+          <p className="mt-6 text-[15px] leading-5 max-w-[350px] text-[#257367]/90 font-normal">
+            Como uma cooperativa de transportes, temos o compromisso com uma gestão profissional e transparente que garantem diferenciais exclusivos aos nossos clientes.
+          </p>
         </div>
 
+        {/* Right image with navigation */}
+        <div className="flex-1 max-w-[720px] relative">
+          <Image
+            src={images[currentImage].src}
+            alt={images[currentImage].alt}
+            width={720}
+            height={400}
+            className="w-full h-auto object-cover "
+          />
+          <div className="absolute top-1/2 -translate-y-1/2 flex justify-between w-full px-4">
+            <Button 
+              onClick={prevImage}
+              className="bg-white/40 hover:bg-white/40 text-black rounded-full w-12 h-12"
+            >
+              &lt;
+            </Button>
+            <Button 
+              onClick={nextImage}
+              className="bg-white/40 hover:bg-white/40 text-black rounded-full w-12 h-12"
+            >
+              &gt;
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Features grid */}
+      <div className="max-w-[1440px] mx-auto px-6 pb-10 md:pb-16 lg:pb-20 max-w-[1200px] text-[#257367] font-extrabold text-[18px] leading-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-12 relative z-10">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-start gap-3 max-w-[360px]">
+            <div className="bg-white text-[#257367] rounded-lg p-3 shrink-0">
+              <FaCheck />
+            </div>
+            <div>
+              {feature.split('\n').map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < feature.split('\n').length - 1 && <br />}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      
+     
         {/* Facilities Section */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {facilities.map((facility, index) => (
@@ -102,40 +172,7 @@ export default function CorporateSection() {
             </div>
           ))}
         </div>
-
-        {/* Identidade Corporativa Section */}
-        <div className="bg-gray-50 rounded-lg p-12">
-          <h3 className="text-2xl font-bold text-center text-[#257367] mb-12">
-            IDENTIDADE CORPORATIVA
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {identityCards.map((card, index) => (
-              <div
-                key={index}
-                className="opacity-0 animate-fade-slide-up"
-                style={{
-                  animationDelay: `${index * 200}ms`,
-                  animationFillMode: 'forwards'
-                }}
-              >
-                <Card className="bg-white h-full">
-                  <CardContent className="pt-6">
-                    <div className="text-[#257367] mb-4 flex justify-center">
-                      {card.icon}
-                    </div>
-                    <h4 className="text-xl font-bold text-center mb-4 text-[#257367]">
-                      {card.title}
-                    </h4>
-                    <p className="text-gray-600 text-center">
-                      {card.content}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
         </div>
-      </div>
     </section>
   );
 }
