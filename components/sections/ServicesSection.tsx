@@ -96,8 +96,8 @@ export default function ServicesSection() {
           <h2 className="text-[#257367] text-[36px] leading-[44px] font-extrabold max-w-[480px] mt-12">
             Frota <span className="font-normal">ampla e Moderna</span>
           </h2>
-          <div className="flex flex-col sm:flex-row sm:space-x-20 mt-6 max-w-[480px]">
-            <div className="flex items-start space-x-3 max-w-[280px] mb-6 sm:mb-0">
+          <div className="flex flex-col sm:flex-row sm:space-x-20 mt-8 max-w-[480px]">
+            <div className="flex items-start space-x-3 max-w-[280px] mb-8 sm:mb-0">
               <div className="w-1.5 h-8 bg-black rounded-full mt-1"></div>
               <p className="font-extrabold text-[18px] leading-7 max-w-[260px] text-[#257367]">
                 Caminhões Truck’s<br />e Carretas
