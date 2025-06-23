@@ -80,72 +80,64 @@ export default function ServicesSection() {
         {/* Cargo Services */}
        
 
-      <div className="flex flex-col lg:flex-row min-h-[700px] w-full">
-        <div className="bg-gray-50 w-full lg:w-[45%] flex flex-col justify-center p-6 md:p-8 lg:p-10 clip-custom relative">
-          <h1 className="text-[#257367] text-[48px] leading-[56px] font-normal max-w-[480px]">
-            Transporte<br />de <strong className="font-extrabold">Cargas</strong>
-          </h1>
-          <p className="text-black text-[16px] leading-6 mt-6 max-w-[480px] font-normal">
-            Nosso compromisso é garantir que a sua carga ou produção chegue ao destino com eficiência e segurança.
-          </p>
-          <ul className="text-[#257367] text-[18px] leading-7 font-extrabold mt-6 max-w-[480px] list-disc list-inside space-y-1">
-            <li>Cargas secas</li>
-            <li>Granel sólido</li>
-            <li>Estruturas de apoio</li>
-          </ul>
-          <h2 className="text-[#257367] text-[36px] leading-[44px] font-extrabold max-w-[480px] mt-12">
-            Frota <span className="font-normal">ampla e Moderna</span>
-          </h2>
-          <div className="flex flex-col sm:flex-row sm:space-x-20 mt-8 max-w-[480px]">
-            <div className="flex items-start space-x-3 max-w-[280px] mb-8 sm:mb-0">
-              <div className="w-1.5 h-8 bg-black rounded-full mt-1"></div>
-              <p className="font-extrabold text-[18px] leading-7 max-w-[260px] text-[#257367]">
-                Caminhões Truck’s<br />e Carretas
-              </p>
-            </div>
-            <div className="flex items-start space-x-3 max-w-[280px] mb-6 sm:mb-0">
-              <div className="w-1.5 h-8 bg-black rounded-full mt-1"></div>
-              <p className="font-extrabold text-[18px] leading-7 max-w-[260px] text-[#257367]">
-                Caminhões de pequeno<br />e médio porte
-              </p>
-            </div>
-            <div className="flex items-start space-x-3 max-w-[280px]">
-              <div className="w-1.5 h-8 bg-black rounded-full mt-1"></div>
-              <p className="font-extrabold text-[18px] leading-7 max-w-[260px] text-[#257367]">
-                Veículos utilitários<br />para pequenas cargas
-              </p>
-            </div>
+      <div className="flex flex-col w-full">
+        {/* Top Row - Two Columns */}
+        <div className="flex flex-col lg:flex-row min-h-[600px] w-full">
+          <div className="bg-gray-50 w-full lg:w-[45%] flex flex-col justify-center p-6 md:p-8 lg:p-10 clip-custom relative">
+            <h1 className="text-[#257367] text-[48px] leading-[56px] font-normal max-w-[480px]">
+              Transporte<br />de <strong className="font-extrabold">Cargas</strong>
+            </h1>
+            <p className="text-black text-[16px] leading-6 mt-6 max-w-[480px] font-normal">
+              Nosso compromisso é garantir que a sua carga ou produção chegue ao destino com eficiência e segurança.
+            </p>
+            <ul className="text-[#257367] text-[18px] leading-7 font-extrabold mt-6 max-w-[480px] list-disc list-inside space-y-1">
+              <li>Cargas secas</li>
+              <li>Granel sólido</li>
+              <li>Estruturas de apoio</li>
+            </ul>
           </div>
-          <style jsx>{`
-            .clip-custom {
-              clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%, 0 calc(100% - 40px));
-            }
-            @media (max-width: 1024px) {
-              .clip-custom {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
-                padding: 2rem !important;
-              }
-            }
-            @media (max-width: 768px) {
-              .clip-custom {
-                clip-path: none !important;
-                padding: 1.5rem !important;
-              }
-            }
-          `}</style>
+          <div className="w-full lg:w-[55%] flex flex-col items-center justify-center">
+            <Image
+              src="/transporte_cargas.webp"
+              alt="Large white truck driving on a road at sunset with an orange sky and clouds"
+              width={1920}
+              height={1080}
+              className="w-full h-full object-cover rounded-sm object-right"
+              priority
+            />      
+          </div>
         </div>
-        <div className="w-full lg:w-[55%]">
-          <Image
-            src="/transporte_cargas.webp"
-            alt="Large white truck driving on a road at sunset with an orange sky and clouds"
-            width={1920}
-            height={1080}
-            className="w-full h-full object-cover object-right"
-            priority
-          />
-        </div>
-      </div>
 
+        {/* Bottom Row - Fleet Section */}
+        <div className="w-full bg-gray-50 px-6 md:px-10 py-8 md:py-12">
+          <h2 className="text-lg md:text-xl font-light text-black max-w-[1200px]">
+            <strong className="font-extrabold">Frota</strong> ampla e Moderna
+          </h2>
+          <div className="flex flex-col md:flex-row gap-4 mt-3 text-[#2B6B5A] text-xs md:text-sm">
+            <p className="border-l-2 border-[#2B6B5A] pl-2">Caminhões Truck&apos;s e Carretas</p>
+            <p className="border-l-2 border-[#2B6B5A] pl-2">Caminhões de pequeno e médio porte</p>
+            <p className="border-l-2 border-[#2B6B5A] pl-2">Veículos utilitários para pequenas cargas</p>
+          </div>
+        </div>
+
+        <style jsx>{`
+          .clip-custom {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+            padding: 2rem !important;
+          }
+          @media (max-width: 768px) {
+            .clip-custom {
+              clip-path: none !important;
+              padding: 1.5rem !important;
+            }
+          }
+        `}</style>
+      </div>
+{/* Fleet Section - Redesigned */}
+
+          
+    
+        {/*asdasd*/}
               {/*asdasd*/}
  <div className="w-full">
         <div className="flex flex-col md:flex-row items-center justify-between bg-gray-50 px-6 md:px-20 py-10 md:py-16 gap-8 md:gap-0"> 
@@ -217,63 +209,50 @@ export default function ServicesSection() {
         {/* Passenger Services */}
 
         {/* Passenger Transport Section */}
-        <div className="flex flex-col lg:flex-row min-h-[700px] w-full">
-          <div className="bg-gray-50 w-full lg:w-[45%] flex flex-col justify-center p-6 md:p-8 lg:p-10 clip-custom relative">
-            <h1 className="text-[#257367] text-[48px] leading-[56px] font-normal max-w-[480px]">
-              Transporte<br />de <strong className="font-extrabold">Pessoas</strong>
-            </h1>
-            <p className="text-black text-[16px] leading-6 mt-6 max-w-[480px] font-normal">
-              Na estrada, nossa missão é levar você com tranquilidade, segurança e conforto.
-              <br />
-              Contamos com motoristas experientes, veículos revisados regularmente e atenção total ao bem-estar dos passageiros.
-            </p>
-            <ul className="text-[#257367] text-[18px] leading-7 font-extrabold mt-6 max-w-[480px] list-disc list-inside space-y-1">
-              {passengerServices.map(service => (
-                <li key={service.title}>{service.title}</li>
-              ))}
-            </ul>
-            <h2 className="text-[#257367] text-[36px] leading-[44px] font-extrabold max-w-[480px] mt-12">
-              Frota <span className="font-normal">ampla e Moderna</span>
+        <div className="flex flex-col w-full">
+          {/* Top Row - Two Columns */}
+          <div className="flex flex-col lg:flex-row min-h-[600px] w-full">
+            <div className="bg-gray-50 w-full lg:w-[45%] flex flex-col justify-center p-6 md:p-8 lg:p-10 clip-custom relative">
+              <h1 className="text-[#257367] text-[48px] leading-[56px] font-normal max-w-[480px]">
+                Transporte<br />de <strong className="font-extrabold">Pessoas</strong>
+              </h1>
+              <p className="text-black text-[16px] leading-6 mt-6 max-w-[480px] font-normal">
+                Na estrada, nossa missão é levar você com tranquilidade, segurança e conforto.
+                <br />
+                Contamos com motoristas experientes, veículos revisados regularmente e atenção total ao bem-estar dos passageiros.
+              </p>
+              <ul className="text-[#257367] text-[18px] leading-7 font-extrabold mt-6 max-w-[480px] list-disc list-inside space-y-1">
+                {passengerServices.map(service => (
+                  <li key={service.title}>{service.title}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="w-full lg:w-[55%] flex flex-col items-center justify-center">
+              <Image
+                src="/onibus.webp"
+                alt="White modern bus driving on a road at sunset with an orange sky and clouds"
+                width={1920}
+                height={1080}
+                className="w-full h-full object-cover rounded-sm object-left"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Bottom Row - Fleet Section */}
+          <div className="w-full bg-gray-50 px-6 md:px-10 py-8 md:py-12">
+            <h2 className="text-lg md:text-xl font-light text-black max-w-[1200px]">
+              <strong className="font-extrabold">Frota</strong> ampla e Moderna
             </h2>
-            <div className="flex flex-col sm:flex-row sm:space-x-20 mt-6 max-w-[480px]">
+            <div className="flex flex-col md:flex-row gap-4 mt-3 text-[#2B6B5A] text-xs md:text-sm">
               {fleetInfo.passenger.map((item, index) => (
-                <div key={index} className="flex items-start space-x-3 max-w-[280px] mb-6 sm:mb-0">
-                  <div className="w-1.5 h-8 bg-black rounded-full mt-1"></div>
-                  <p className="font-extrabold text-[18px] leading-7 max-w-[260px] text-[#257367]">
-                    {item}
-                  </p>
-                </div>
+                <p key={index} className="border-l-2 border-[#2B6B5A] pl-2">{item}</p>
               ))}
             </div>
-            <style jsx>{`
-            .clip-custom {
-              clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%, 0 calc(100% - 40px));
-            }
-            @media (max-width: 1024px) {
-              .clip-custom {
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
-                padding: 2rem !important;
-              }
-            }
-            @media (max-width: 768px) {
-              .clip-custom {
-                clip-path: none !important;
-                padding: 1.5rem !important;
-              }
-            }
-          `}</style>
-          </div>
-          <div className="w-full lg:w-[55%]">
-            <Image
-              src="/onibus.webp"
-              alt="White modern bus driving on a road at sunset with an orange sky and clouds"
-              width={1920}
-              height={1080}
-              className="w-full h-full object-cover object-left"
-              priority
-            />
           </div>
         </div>
+
+        {/* WhatsApp Button */}
         <div className="mt-12 text-center">
           <Button
             size="lg"
