@@ -31,7 +31,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-16 [text-shadow:_0_2px_4px_rgba(0,0,0,0.5)]">
-            Tradição e Excelência em transportes de cargas e passageiros
+          Soluções seguras em transportes de cargas e passageiros.
           </h1>
           <div className="flex gap-4">
             <Button 
