@@ -136,9 +136,15 @@ export default function ContactSection() {
                   <Mail className="h-5 w-5" />
                   <span>coopcam@coopcam.coop.br</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 mt-1" />
-                  <span>Av. Bartimeu Gomes de Aguiar, 1777, Santa Helena, São Gabriel da Palha - ES, Brasil</span>
+                <div className="w-full h-64 rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.222366160044!2d-40.524913!3d-18.962455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU3JzQ0LjgiUyA0MMKwMzEnMjkuNyJX!5e0!3m2!1sen!2sbr!4v1620000000000!5m2!1sen!2sbr"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                  ></iframe>
                 </div>
               </div>
             </div>
