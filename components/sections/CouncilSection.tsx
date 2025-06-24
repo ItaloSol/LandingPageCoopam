@@ -46,6 +46,11 @@ const fiscalCouncil = [
     image: "/Joicy-Rigo-Efetivo.webp"
   },
   {
+    name: "Wendel Stressmann",
+    role: "Efetivo",
+    image: "/Wendel-Strassmann-Efetivo.webp"
+  },
+  {
     name: "Adrieli Rigo",
     role: "Suplente",
     image: "/Adrieli Rigo - Suplente.webp"
@@ -59,12 +64,8 @@ const fiscalCouncil = [
     name: "Luciano Savio Arpini",
     role: "Suplente",
     image: "/Luciano-Savio-Arpini-Suplente.webp"
-  },
-  {
-    name: "Wendel Stressmann",
-    role: "Efetivo",
-    image: "/Wendel-Strassmann-Efetivo.webp"
   }
+  
 ];
 
 export default function CouncilSection() {
