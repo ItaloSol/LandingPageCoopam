@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 const stats = [
   {
-    value: "375",
+    value: "400",
     label: "COOPERADOS",
     icon: <Users className="h-8 w-8 mx-auto text-[#257367] mb-4" />
   },
@@ -63,7 +63,7 @@ export default function ValuesSection() {
               <CardContent className="p-8">
                 {stat.icon}
                 <div className="text-5xl font-bold text-[#257367] mb-2">
-                  {animatedValues[index].toLocaleString()}
+                  +{animatedValues[index].toLocaleString()}
                 </div>
                 <p className="text-gray-600 uppercase text-sm tracking-wider">
                   {stat.label}

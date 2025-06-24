@@ -123,8 +123,15 @@ export default function ContactSection() {
                   onClick={() => handleWhatsAppClick('27 99911 0772')}
                 >
                   <Phone className="h-5 w-5" />
-                  <span>+55 27 99911 0772</span>
+                  <span>(27) 99911-0772</span>
                 </Button>
+                <Button
+                  variant="ghost"
+                  className="flex items-center gap-3 text-[#257367] hover:text-[#1a5249] w-full justify-start"
+                >
+                  <Phone className="h-5 w-5" />
+                  <span>(27) 3727-1374</span>
+                  </Button>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5" />
                   <span>coopcam@coopcam.coop.br</span>
