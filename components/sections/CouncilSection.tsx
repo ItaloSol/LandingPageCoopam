@@ -10,60 +10,60 @@ const administrationCouncil = [
   {
     name: "Advaldo A. Zotelle",
     role: "Diretor Presidente",
-    image: "/advaldo-500x500.webp"
+    image: "/Advaldo Antonio Zottelle - Diretor Presidente.webp"
   },
   {
     name: "João Batista de Oliveira",
     role: "Diretor Financeiro",
-    image: "/joao_batista_oliveira-500x500.webp"
+    image: "/Joao-Batista-de-Oliveira-Diretor-Financeiro.webp"
   },
   {
     name: "João Carlos Borges",
     role: "Diretor Secretário",
-    image: "/joao_carlos-500x500.webp"
+    image: "/Joao-Carlos-Borges-Diretor-Secretário.webp"
   },
   {
     name: "Ivão Sartori",
     role: "Diretor Vogal",
-    image: "/ivao_sartori-500x500.webp"
+    image: "/Ivao-Sartori-Diretor-Vogal.webp"
   },
   {
     name: "Sergio Ganho",
     role: "Diretor Vogal",
-    image: "/sergio_gancho-500x500.webp"
+    image: "/Sergio-Ganho-Diretor-Vogal.webp"
   }
 ];
 
 const fiscalCouncil = [
-  {
-    name: "Ademilson Rigo",
-    role: "Efetivo",
-    image: "/ademilson_rigo-500x500.webp"
-  },
-  {
-    name: "Ilson Ardison",
-    role: "Efetivo",
-    image: "/ilson_ardisom-500x500.webp"
-  },
-  {
+    {
     name: "Welinton Bortoloti",
     role: "Efetivo",
-    image: "/welington_bortoloti-500x500.webp"
+    image: "/Welinton-Bortoloti-Efetivo.webp"
   },
   {
-    name: "Anjo Gabriel Fioroti",
-    role: "Suplente",
-    image: "/anjo_fiorot-500x500.webp"
+    name: "Joicy Rigo",
+    role: "Efetivo",
+    image: "/Joicy-Rigo-Efetivo.webp"
   },
   {
-    name: "Josiane Bruziguini de Jesus",
+    name: "Adrieli Rigo",
     role: "Suplente",
-    image: "/josiane-500x500.webp"
+    image: "/Adrieli Rigo - Suplente.webp"
+  },
+  {
+    name: "Flávia da Costa Gali",
+    role: "Suplente",
+    image: "/Flavia da Costa Gali - Suplente.webp"
+  },
+  {
+    name: "Luciano Savio Arpini",
+    role: "Suplente",
+    image: "/Luciano-Savio-Arpini-Suplente.webp"
   },
   {
     name: "Wendel Stressmann",
     role: "Suplente",
-    image: "/wendel-500x500.webp"
+    image: "/Wendel-Strassmann-Efetivo.webp"
   }
 ];
 
@@ -151,7 +151,7 @@ export default function CouncilSection() {
                             alt={member.name}
                             width={96}
                             height={96}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-left-top"
                             priority
                           />
                         </div>
@@ -202,7 +202,7 @@ export default function CouncilSection() {
                             alt={member.name}
                             width={96}
                             height={96}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-left-top"
                             priority
                           />
                         </div>
