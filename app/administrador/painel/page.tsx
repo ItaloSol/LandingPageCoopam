@@ -104,7 +104,7 @@ export default function AdminPanel() {
                   <div className="flex items-center gap-4 p-4">
                     <div className="w-24 h-24 relative flex-shrink-0">
                       <Image
-                        src={item.imagens[0]}
+                        src={`/${item.imagens[0]}`}
                         alt={item.titulo}
                         fill
                         className="object-cover rounded-md"

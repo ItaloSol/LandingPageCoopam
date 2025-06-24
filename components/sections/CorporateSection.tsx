@@ -67,7 +67,7 @@ export default function CorporateSection() {
   };
 
   return (
-    <section className="relative min-h-screen bg-[#f97316] overflow-x-hidden">
+    <section id="about" className="relative min-h-screen bg-[#f97316] overflow-x-hidden">
      
 
       <div className="relative z-10 container mx-auto px-4 max-w-7xl overflow-x-hidden">

@@ -62,7 +62,7 @@ const fiscalCouncil = [
   },
   {
     name: "Wendel Stressmann",
-    role: "Suplente",
+    role: "Efetivo",
     image: "/Wendel-Strassmann-Efetivo.webp"
   }
 ];
@@ -108,7 +108,7 @@ export default function CouncilSection() {
   };
 
   return (
-    <section className="py-20 bg-gray-50" ref={ref}>
+    <section id="council" className="py-20 bg-gray-50" ref={ref}>
       <div className="container mx-auto px-4">
         <motion.h2 
           className="text-3xl font-bold text-center text-[#257367] mb-16"
